@@ -2,12 +2,13 @@
 
 {
   imports =
-    [ 
-      ./hardware-configuration.nix
+    [
+      # i needed to create a cuctom hardware config, if you have issues with waydroid file systems, you will know.
+      ./custom-hc.nix
       ./flatpak.nix
     ];
 
-  # Bootloader configuration.
+# Bootloader configuration.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -104,6 +105,8 @@
     autoconf
     automake
     libtool
+    lld
+    openssl
     tmux
     stow
     kitty
@@ -112,6 +115,7 @@
     fzf
     zoxide
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    neofetch
     hyprpaper
     hypridle
     hyprlock
