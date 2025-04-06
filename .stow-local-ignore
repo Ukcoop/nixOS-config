@@ -1,0 +1,4 @@
+.git
+configuration.nix
+flatpak.nix
+install.sh

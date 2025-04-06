@@ -1,0 +1,108 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "height": 16,
+  "spacing": 0,
+  "exclusive": true,
+  "gtk-layer-shell": true,
+  "passthrough": false,
+  "fixed-center": true,
+  "modules-left": ["hyprland/workspaces"],
+  "modules-right": ["pulseaudio", "battery","custom/countdown", "custom/clock", "clock", "tray"],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{name}: {icon}",
+      "format-icons": {
+        "1": "󰖟",
+        "2": "",
+        "3": "󰎚",
+        "4": "󰉋",
+        "5": "",
+	"6": "",
+	"7": "",
+	"8": "",
+	"9": "",
+	"10": ""
+      }
+  },
+
+  "tray": {
+    "show-passive-items": true,
+    "spacing": 10
+  },
+
+  "battery": {
+    "bat": "BAT1",
+    "adapter": "ADP0",
+    "interval": 1,
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "max-length": 20,
+    "format": "{icon}{capacity}%",
+    "format-warning": "{icon}{capacity}%",
+    "format-critical": "{icon}{capacity}%",
+    "format-charging": "<span foreground='#26ff55'> {capacity} %</span>",
+    "format-plugged": "<span foreground='#26ff55'>  {capacity}%</span>",
+    "format-alt": "{icon} {time}",
+    "format-full": "<span foreground='#26ff55'> {capacity} %</span>",
+    "format-icons": [" ", " ", " ", " ", " "]
+  },
+
+  "custom/countdown": {
+    "exec": "~/.config/waybar/scripts/countdown.sh",
+    "interval": 60,
+    "format": "{}"
+  },
+
+  "custom/clock": {
+    "exec": "~/.config/waybar/scripts/formatted_date.sh",
+    "interval": 60,
+    "format": "{}"
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "tooltip-format": "<big>{:%B %Y}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": true,
+    "interval": 1
+  },
+
+  "memory": {
+    "format": "  {used:0.2f}G"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "  muted",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [" ", " ", " "]
+    },
+    "on-click": "pavucontrol"
+  },
+
+  "custom/sep": {
+    "format": "|",
+    "tooltip": false
+  },
+
+  "custom/power": {
+    "tooltip": false,
+    "on-click": "wlogout -p layer-shell &",
+    "format": " "
+  }
+}
