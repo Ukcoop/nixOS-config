@@ -36,6 +36,8 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  programs.nix-ld.enable = true;
+
   # X11 window system and GNOME desktop.
   services.xserver.enable = true;
   services.xserver.displayManager.gdm.enable = true;
@@ -96,7 +98,10 @@
     xclip
     git
     gh
-    rustup
+    rustc
+    cargo
+    rustfmt
+    clippy
     nodejs_22
     zip
     unzip
